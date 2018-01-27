@@ -1,0 +1,40 @@
+NHS
+Blackpool Community
+Dermatology Service
+Ref: /16637
+Patient Name
+Patient Address
+Address
+Address
+Post Code
+Glenroyd Medical Centre
+Moor Park Health and Leisure
+Bristol Avenue
+Blackpool
+FY2 OJG
+t: XXXX XXX XXX
+<date>
+Dear Patient Name
+Re: Blackpool Community Dermatology Service
+An appointment has been made for you to attend the <Clinic Location> on
+<Appointment Date> at <Appointment Time>.
+The appointment will be with <Clinician> - Dermatology.
+Please report to Glenroyd Medical Centre Reception on the 1st floor.
+Cancelling and rescheduling: If you are unable to attend this appointment please
+contact us as soon as is possible on <telephone number> to enable us to reschedule
+your appointment, and to allow another patient to have the opportunity to attend.
+Non-attendance: If you do not attend the appointment without contacting us we
+will call you and arrange another appointment. If you do not attend the second
+appointment we arrange with you, you will be referred back to your GP who will then
+manage your treatment.
+Please note that we will telephone you 2 days before your appointment to confirm
+your attendance and appointment details. Please feel free to ask any questions you
+may have during this telephone call. If we are unable to contact you we will leave a
+voicemail should the option be available.
+We have also enclosed a Patient Information Leaflet on our service which should
+answer any additional questions that you may have but, if you require any further
+information, please do not hesitate to contact us on <telephone number>.
+Yours sincerely,
+On behalf of Blackpool Community Dermatology Service
+Service provided by:
+virgincare
