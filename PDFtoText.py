@@ -18,7 +18,7 @@ def detect_document(path):
     document = response.full_text_annotation
     return document.text
 
-files = ['Example.png', 'Example2.png', 'Example3.jpg', 'Example4.jpg']
+files = ['letterexample']
 
 for file in files:
     a = os.path.join(os.path.dirname(__file__), file)
