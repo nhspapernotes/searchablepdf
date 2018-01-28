@@ -32,8 +32,4 @@ if __name__ == '__main__':
     path = os.path.join(os.path.dirname(__file__), file)
     text_contents = detect_document(path)
     
-    print(categorise.categorise_letter(text_contents, None, debug=False))
-
-
-
-
+    print(categorise.categorise_letter(text_contents, path, debug=False))
