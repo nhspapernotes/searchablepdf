@@ -1,6 +1,9 @@
 from collections import defaultdict
 import re
 
+from flags import flag_list
+from exporters import exports
+
 """
 Each flag takes the format of (matcher, scores) where the matcher
 is either a regex or a function and the scores are a dictionary.
@@ -22,30 +25,6 @@ For example:
   (0, 0.25) => No effect on adder and final score is 25%
 
 """
-flags = [
-  (r"date of discharge", {
-    "discharge summary": (1, 1),
-    "others": (0, 0.25),
-  }),
-
-  (r"discharge summary", {
-    "discharge summary": (1, 1),
-    "others": (0, 0),
-  }),
-
-  (r"ecg", {
-    "ecg": (1, 1),
-    "others": (0, 1),
-  }),
-
-  ((lambda x: True), {
-    "discharge summary": (0, 0),
-    "others": (1, 1),
-  })
-]
-
-
-exports = ("discharge summary", "ecg", "random note")
 
 """
 test_flag(Flag, String) => {String: (Float, Float)}
@@ -75,12 +54,12 @@ def scan_letter(text_contents):
   
   export_scores = defaultdict(lambda: list([0, 1]))
   
-  for flag in flags:
+  for flag in flag_list:
     (matcher, scores) = flag
     
     flag_scores = test_flag(flag, text_contents)
     
-    for e in exports:
+    for e in exports.keys():
       if e in flag_scores:
         (adder, multiplier) = flag_scores[e]
       else:
@@ -158,7 +137,6 @@ organisation
 SABL
 """
   scores = scan_letter(text_contents)
-  [name, score] = scores[-1]
   
-  print(name + ": " + str(score))
-  
+  for name, score in scores[::-1]:
+    print(name + ": " + str(score))
