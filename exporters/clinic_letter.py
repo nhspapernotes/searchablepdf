@@ -1,6 +1,6 @@
 import json
 
 def main(text):
-  json.dumps({
+  return json.dumps({
     "type": "clinic letter"
   })

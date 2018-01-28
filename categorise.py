@@ -29,11 +29,11 @@ For example:
 """
 test_flag(Flag, String) => {String: (Float, Float)}
 """
-def test_flag(flag, text_contents):
+def test_flag(flag, text_contents, image):
   (matcher, scores) = flag
   
   if hasattr(matcher, "__call__"):
-    matched = matcher(text_contents)
+    matched = matcher(text_contents, image)
   
   else:
     result = re.search(matcher, text_contents)
@@ -49,7 +49,7 @@ def test_flag(flag, text_contents):
 """
 scan_letter(String) => [(String, Float)]
 """
-def scan_letter(text_contents):
+def scan_letter(text_contents, image):
   text_contents = text_contents.lower()
   
   export_scores = defaultdict(lambda: list([0, 1]))
@@ -57,7 +57,7 @@ def scan_letter(text_contents):
   for flag in flag_list:
     (matcher, scores) = flag
     
-    flag_scores = test_flag(flag, text_contents)
+    flag_scores = test_flag(flag, text_contents, image)
     
     for e in exports.keys():
       if e in flag_scores:
@@ -75,7 +75,8 @@ rank_scores({String: (Float, Float)}) => [(String, Float)]
 """
 def rank_scores(combined_scores):
   score_dictionary = {l:s[0] * s[1] for l, s in combined_scores.items()}
-  return sorted(score_dictionary.items(), key=lambda x: x[1])
+  sorted_scores = sorted(score_dictionary.items(), key=lambda x: x[1])
+  return sorted_scores[::-1]
 
 """
 score_letter((Float, Float)) => Float 
@@ -84,6 +85,27 @@ def score_letter(combo_points):
   [points, multiplier] = combo_points
   
   return points * multiplier
+
+"""
+
+"""
+def categorise_letter(text_contents, image, debug=False):
+  scores = scan_letter(text_contents, image)
+  
+  export_function = exports[scores[0][0]]
+  json_export = export_function(text_contents)
+  
+  if debug:
+    for name, score in scores:
+      print(name + ": " + str(score))  
+    
+    print("")
+    print(json_export)
+    print("\n")
+    
+  else:
+    return json_export
+
 
 
 if __name__ == '__main__':
@@ -136,7 +158,4 @@ disablity-smar
 organisation
 SABL
 """
-  scores = scan_letter(text_contents)
-  
-  for name, score in scores[::-1]:
-    print(name + ": " + str(score))
+  categorise_letter(text_contents, None, debug=True)

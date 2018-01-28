@@ -14,7 +14,7 @@ flags = [
     "others": (0, 1),
   }),
   
-  ((lambda x: True), {
+  ((lambda text, image: True), {
     "discharge summary": (0, 0),
     "others": (1, 1),
   })
