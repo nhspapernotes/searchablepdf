@@ -5,26 +5,35 @@ import os
 from google.cloud import vision
 from google.cloud.vision import types
 
+import categorise
+
+import sys
+
+# To use the credentials
+# export GOOGLE_APPLICATION_CREDENTIALS=credentials2.json
+
 def detect_document(path):
-    """Detects document features in an image."""
-    client = vision.ImageAnnotatorClient()
+  """Detects document features in an image."""
+  client = vision.ImageAnnotatorClient()
+  
+  with io.open(path, 'rb') as image_file:
+    content = image_file.read()
+  
+  image = types.Image(content=content)
+  
+  response = client.document_text_detection(image=image)
+  document = response.full_text_annotation
+  return document.text
 
-    with io.open(path, 'rb') as image_file:
-        content = image_file.read()
+if __name__ == '__main__':
+  files = ['letterexample.JPG']
+  
+  for file in sys.argv[1:]:
+    path = os.path.join(os.path.dirname(__file__), file)
+    text_contents = detect_document(path)
+    
+    categorise.categorise_letter(text_contents, None, debug=True)
 
-    image = types.Image(content=content)
 
-    response = client.document_text_detection(image=image)
-    document = response.full_text_annotation
-    return document.text
-
-files = ['letterexample']
-
-for file in files:
-    a = os.path.join(os.path.dirname(__file__), file)
-    text = detect_document(a)
-    fh = open(file+"output.txt", "w")
-    fh.write(text)
-    fh.close()
 
 

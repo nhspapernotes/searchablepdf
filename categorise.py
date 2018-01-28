@@ -110,52 +110,33 @@ def categorise_letter(text_contents, image, debug=False):
 
 if __name__ == '__main__':
   text_contents = """
+Clinic Date
 NHS
-Blood and Transplant
-Charcot Road
-Colindale
-London
-NW9 5GB
-11 November 2014
-Private and Confidential
-www.blood.co.uk
-Dear Mx
-Thank you very much for getting in touch with us.
-Your query has been passed on to our department for further comment. I can see
-that Vivian did explain that our IT system is currently unable to offer the options of
-non-specific gender title of Mx.
-It is not a problem if a transgender person wishes to donate providing we establish
-the donor's preferred gender i.e., male or female. Once we have established the
-preferred gender of the donor, we will treat the donor according to his/her preference.
-Trans men FtM donors will be treated as male donors regardless of their female
-characteristics and similarly, we will treat trans women MtF donors as female donors
-regardless of their male characteristics. Again, the donor has to decide whether they
-will be gendered as male or female before we can proceed. It is clinically important
-for us to identify whether the donor is male or female in order to ensure we only
-accept donations when it is safe for both donors and recipients. Our haemoglobirn
-testing on session have different acceptance levels between male and female
-donors. We have a much higher cut-off level for male donors than female donors. I
-must apologise for the wrong information you have been given. Male donors tend to
-have a higher haemoglobin count compared to female donors but not necessarily the
-platelet count. There are various factors why this is the case and one of these are the
-high levels of testosterone among the male population including those on
-testosterone therapy i.e. trans men donors.
-Hoping you will find the information useful. Please feel free to contact our helpline on
-0300 123 23 23 if you need to discuss further and request to be put through to the
-Clinical Support Team. We are available between 8am - 8pm Monday to Friday,
-9:30am to 5:00pm on weekends.
-With best wishes and kindest regards.
-Yours sincerely
-Alvin Fabiana
-Senior Nurse Practitioner
-Business ABOU
-Forum
-Save a life
-Give blood
-Disability0C
-Bullding
-disablity-smar
-organisation
-SABL
+This Hospital
+Somewhere
+NW4 FTP
+Joe Johnson, 1983-11-10, NHS number:4680200921
+Dear patient,
+Diagnoses:
+Asthma
+Medications:
+Enoxaparin
+Gentamycin
+Clindamycin
+Codeine
+Asprin
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices neque mattis vestibulum
+imperdiet. Nulla sit amet tincidunt quam. Pellentesque malesuada tristique sollicitudin. Pellentesque
+eu augue finibus, posuere sem auctor, ultricies nibh. Curabitur molestie lectus pellentesque,
+malesuada augue nec, maximus lorem. Maecenas viverra velit mauris, id rhoncus libero porta sit
+amet. Curabitur molestie gravida bibendum. Nunc posuere magna pellentesque felis aliquam, sit
+amet vestibulum magna pulvinar, Ut vulputate vulputate urna, ac porttitor ex vehicula elementum
+Duis ut vulputate elit. Nullam sodales dui vestibulum porta eleifend. Mauris a elementum nunc, quis
+volutpat urna, Vivamus auctor ex id eleifend pellentesque. Donec congue leo lacus, sed iaculis velit
+fringilla vel. Ut vehicula turpis vel tincidunt vulputate. Nullam aliquam enim sit amet fringilla tincidunt.
+Cras eu mi massa, in pulvinar tempor nulla in cursus, Aenean a elit eget enim bibendum
+pellentesque. Nulla at felis sagittis, consequat orci sed, cursus sapien.
+
+
 """
   categorise_letter(text_contents, None, debug=True)
