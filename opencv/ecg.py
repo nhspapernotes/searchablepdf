@@ -1,3 +1,19 @@
+"""
+Other template matching methods:
+
+    [
+        'cv2.TM_CCOEFF',
+        'cv2.TM_CCOEFF_NORMED',
+        'cv2.TM_CCORR',
+        'cv2.TM_CCORR_NORMED',
+        'cv2.TM_SQDIFF',
+        'cv2.TM_SQDIFF_NORMED'
+    ]
+
+Test results from different methods and with different templates
+for identifying different documents
+"""
+
 import cv2
 
 def is_ecg(image_path):
